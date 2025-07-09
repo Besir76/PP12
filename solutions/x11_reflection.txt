@@ -1,0 +1,13 @@
+Reflection Questions – Task 1
+
+ What steps are required to open an X11 window and receive events?
+1. Verbindung zum X-Server öffnen mit `XOpenDisplay`.
+2. Bildschirm abfragen mit `DefaultScreen`.
+3. Fenster erzeugen mit `XCreateSimpleWindow`.
+4. Eingabeereignisse registrieren mit `XSelectInput`.
+5. Fenster sichtbar machen mit `XMapWindow`.
+6. Ereignisschleife starten mit `XNextEvent`. How does the `Expose` event trigger your drawing code?
+Der `Expose`-Event wird ausgelöst, wenn ein Fenster (neu) dargestellt werden muss, z. B. nach dem Minimieren.
+In der Ereignisschleife wird geprüft, ob `e.type == Expose`.
+Wenn ja, wird mit `XDrawRectangle` der Inhalt (hier: Rechteck) neu gezeichnet.
+
