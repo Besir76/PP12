@@ -1,0 +1,21 @@
+Reflection Questions – Task 2
+
+1. What are the basic building blocks of a GTK application?
+Die wichtigsten Bausteine sind:
+- GtkApplication oder main() mit gtk_init()
+- GtkWindow als Hauptfenster
+- GtkWidgets wie Label, Entry, Button
+- GtkBox oder andere Layout-Container
+- Signalverbindungen z. B. mit g_signal_connect
+- gtk_widget_show_all() und gtk_main()
+
+2. How do signals and callbacks work in GTK?
+Signale werden bei bestimmten Ereignissen ausgelöst (z. B. Klick auf Button).
+Mit `g_signal_connect()` verbindet man das Signal mit einer Callback-Funktion,
+die dann automatisch aufgerufen wird. Beispiel: Klick-Signal → on_button_clicked()
+
+3. How does GTK+ manage widget layout?
+GTK verwendet Container-Widgets wie GtkBox oder GtkGrid. 
+Dort können andere Widgets eingefügt werden. Die Layouts passen sich 
+automatisch an Fenstergröße, Padding und Ausrichtung an.
+
